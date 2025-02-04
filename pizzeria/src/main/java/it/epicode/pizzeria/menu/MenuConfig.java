@@ -1,6 +1,9 @@
 package it.epicode.pizzeria.menu;
 
 import it.epicode.pizzeria.bevande.Bevanda;
+import it.epicode.pizzeria.pizze.Pizza;
+import it.epicode.pizzeria.topping.Topping;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,11 +21,14 @@ public class MenuConfig {
 
     @Autowired
     private Pizza pizzaMargherita;
+    @Autowired
     private Pizza pizzaFunghi;
+    @Autowired
     private Pizza pizzaSalame;
 
     @Autowired
     private Topping abbondanteMozzarella;
+    @Autowired
     private Topping salame;
 
     @Bean
@@ -37,6 +43,5 @@ public class MenuConfig {
         m.setToppings(List.of(abbondanteMozzarella, salame));
         return m;
     }
-
 
 }

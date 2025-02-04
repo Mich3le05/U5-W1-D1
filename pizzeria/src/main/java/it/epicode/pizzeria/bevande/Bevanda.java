@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 
 public class Bevanda {
 
-    private String bevanda;
+    private String nome;
     private int calorie;
     private double prezzo;
 

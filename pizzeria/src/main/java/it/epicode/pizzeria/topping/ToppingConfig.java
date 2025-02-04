@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 
-public class PizzaConfig {
+public class ToppingConfig {
     @Bean
     public Topping abbondanteMozzarella() {
         Topping t = new Topping();
