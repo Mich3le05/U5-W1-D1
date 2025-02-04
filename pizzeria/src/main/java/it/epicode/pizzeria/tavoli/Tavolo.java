@@ -1,4 +1,4 @@
-package it.epicode.pizzeria.tavolo;
+package it.epicode.pizzeria.tavoli;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class Tavolo {
-    private int numero;
+    private int numeroTavolo;
+    private int numeroCoperti;
     private int copertiMassimi;
-    private boolean occupato;
+    private StatoTavolo statoTavolo;
 }

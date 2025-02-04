@@ -10,7 +10,7 @@ public class PizzaConfig {
     @Bean
     public Pizza pizzaMargherita() {
         Pizza p = new Pizza();
-        p.setNome("Pizza Margherita");
+        p.setNomePizza("Pizza Margherita");
         p.setCalorie(400);
         p.setPrezzo(5.0);
         return p;
@@ -19,7 +19,7 @@ public class PizzaConfig {
     @Bean
     public Pizza pizzaSalame() {
         Pizza p = new Pizza();
-        p.setNome("Pizza Salame");
+        p.setNomePizza("Pizza Salame");
         p.setCalorie(400);
         p.setPrezzo(5.0);
         return p;
@@ -28,7 +28,7 @@ public class PizzaConfig {
     @Bean
     public Pizza pizzaFunghi() {
         Pizza p = new Pizza();
-        p.setNome("Pizza Funghi");
+        p.setNomePizza("Pizza Funghi");
         p.setCalorie(400);
         p.setPrezzo(5.0);
         return p;

@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 
 public class PizzaConfig {
+
     @Bean
     public Pizza pizzaMargherita() {
         Pizza p = new Pizza();
@@ -16,7 +17,7 @@ public class PizzaConfig {
     }
 
     @Bean
-    public pizzaSalame {
+    public Pizza pizzaSalame() {
         Pizza p = new Pizza();
         p.setNome("Pizza Salame");
         p.setCalorie(400);
@@ -25,7 +26,7 @@ public class PizzaConfig {
     }
 
     @Bean
-    public pizzaFunghi() {
+    public Pizza pizzaFunghi() {
         Pizza p = new Pizza();
         p.setNome("Pizza Funghi");
         p.setCalorie(400);

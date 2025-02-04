@@ -1,39 +1,45 @@
 package it.epicode.pizzeria.runner;
 
-import it.epicode.pizzeria.ordine.ElementoOrdine;
+import it.epicode.pizzeria.menu.Menu;
 import it.epicode.pizzeria.ordine.Ordine;
-import it.epicode.pizzeria.ordine.OrdineConfig;
-import it.epicode.pizzeria.tavolo.Tavolo;
+import it.epicode.pizzeria.ordine.StatoOrdine;
+import it.epicode.pizzeria.tavoli.Tavolo;
 
-import lombok.RequiredArgsConstructor;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDateTime;
-import java.util.Arrays;
+import java.util.List;
 
-@RequiredArgsConstructor
 @Component
 public class ApplicationRunner implements CommandLineRunner {
-    private static final Logger logger = LoggerFactory.getLogger(ApplicationRunner.class);
+    @Autowired
+    private Menu menuPranzo;
 
-    private final OrdineConfig ordineConfig;
+    @Value("${costo.coperto}")
+    private double costoCoperto;
 
     @Override
     public void run(String... args) throws Exception {
-        // Creazione menu
-        ElementoOrdine pizza = new ElementoOrdine("Margherita", 8.50);
-        ElementoOrdine bibita = new ElementoOrdine("Coca-Cola", 3.00);
+        System.out.println(menuPranzo);
 
-        Tavolo tavolo1 = new Tavolo(1, 4, false);
+        Tavolo tavolo = new Tavolo();
+        tavolo.setNumeroTavolo(1);
 
-        // Creazione ordine
-        Ordine ordine1 = new Ordine(1, Arrays.asList(pizza, bibita), tavolo1, LocalDateTime.now());
+        Ordine ordine = new Ordine();
+        ordine.setNumeroOrdine(1);
+        ordine.setTavolo(tavolo);
+        ordine.setStatoOrdine(StatoOrdine.IN_CORSO);
+        ordine.setNumeroCoperti(2);
+        ordine.setCostoCopeto(costoCoperto);
+        ordine.setElementiOrdine(List.of(
+                menuPranzo.getElementiMenu().get(0),
+                menuPranzo.getElementiMenu().get(1),
+                menuPranzo.getElementiMenu().get(2)));
 
-        // Stampa ordine
-        logger.info("Ordine creato: {}", ordine1);
+        ordine.stampaOrdine();
     }
+
+
 }

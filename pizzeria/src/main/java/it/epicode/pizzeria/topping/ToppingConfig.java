@@ -9,18 +9,18 @@ public class ToppingConfig {
     @Bean
     public Topping abbondanteMozzarella() {
         Topping t = new Topping();
-        t.setName("Abbondante Mozzarella");
+        t.setNomeTopping("Abbondante Mozzarella");
         t.setCalorie(40);
-        t.setPrice(1.99);
+        t.setPrezzo(1.99);
         return t;
     }
 
     @Bean
     public Topping salame() {
         Topping t = new Topping();
-        t.setName("Salame");
+        t.setNomeTopping("Salame");
         t.setCalorie(40);
-        t.setPrice(1.99);
+        t.setPrezzo(1.99);
         return t;
     }
 }
